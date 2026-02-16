@@ -24,10 +24,17 @@ export default function ClientDiscountPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (phone.length < 8) {
-      alert("Veuillez entrer un numéro valide");
+    const phoneRegex = /^[0-9]{8}$/;
+
+    if (!phoneRegex.test(phone)) {
+      alert("Veuillez entrer un numéro tunisien valide (8 chiffres)");
       return;
     }
+
+    //if (phone.length < 8) {
+      //alert("Veuillez entrer un numéro valide");
+      //return;
+    //}
 
     if (!code.trim()) {
       alert("Veuillez entrer le code");
@@ -142,7 +149,7 @@ export default function ClientDiscountPage() {
           </p>
           <form onSubmit={handleSubmit}>
             <input
-              type="tel"
+              type="text"
               placeholder="Numéro de téléphone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
