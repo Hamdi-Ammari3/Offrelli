@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import {FaPhoneAlt,FaWhatsapp,FaInstagram,FaTiktok,FaChevronLeft,FaChevronRight,FaClock } from "react-icons/fa";
 import { FiFacebook } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
+import ClipLoader from "react-spinners/ClipLoader";
 import "../../style.css";
 
 function ServicesSlider({ products, whatsapp }) {
@@ -129,7 +130,14 @@ export default function StorePage() {
     Sunday: "Dimanche",
   };
 
-  if (loading) return <p className="loading">Loading...</p>;
+  if (loading) {
+    return (
+      <div className="loader">
+        <ClipLoader size={15} color="#000"/>
+      </div>
+    );
+  }
+
   if (!store) return <p className="loading">Not found</p>;
 
   const open = isOpenNow();
