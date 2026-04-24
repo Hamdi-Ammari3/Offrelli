@@ -52,7 +52,9 @@ function ServicesSlider({ products, whatsapp }) {
             <div className="overlay" />
             <div className="slide-content">
               <h3>{p.name}</h3>
-              <p className="price">{p.price} TND</p>
+              {p.price > 0 && (
+                <p className="price">{p.price} TND</p>
+              )}            
             </div>
           </div>
         ))}
