@@ -314,7 +314,7 @@ export default function StorePage() {
           </p>
 
           <h3 className="footer-title">
-            Offrelli
+            SitePro Tunisie
           </h3>
 
           <p className="footer-desc">
@@ -334,7 +334,7 @@ export default function StorePage() {
         </div>
 
         <p className="footer-copy">
-          © {new Date().getFullYear()} Offrelli — All rights reserved
+          © {new Date().getFullYear()} SitePro Tunisie — All rights reserved
         </p>
       </div>
 
